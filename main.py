@@ -25,7 +25,13 @@ email_input = Entry(width=35)
 email_text.grid(row=2, column=0)
 email_input.grid(row=2, column=1, columnspan=2)
 # Password Entry [3 Labels]
-
+password_text = Label(text="Password:")
+password_input = Entry(width=21)
+password_generate_button = Button(text="Generate Password")
+password_text.grid(row=3, column=0)
+password_input.grid(row=3, column=1)
+password_generate_button.grid(row=3, column=2)
 # Add Button [1 Label]
+
 
 window.mainloop()
