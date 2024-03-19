@@ -17,11 +17,15 @@ canvas.grid(row=0, column=1)
 # Website Entry [2 Labels]
 website_text = Label(text="Website:")
 website_input = Entry(width=35)
-
 website_text.grid(row=1, column=0)
 website_input.grid(row=1, column=1, columnspan=2)
 # Email/Username Entry [2 Labels]
+email_text = Label(text="Email/Username:")
+email_input = Entry(width=35)
+email_text.grid(row=2, column=0)
+email_input.grid(row=2, column=1, columnspan=2)
 # Password Entry [3 Labels]
+
 # Add Button [1 Label]
 
 window.mainloop()
