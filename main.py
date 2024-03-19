@@ -17,11 +17,13 @@ canvas.grid(row=0, column=0, columnspan=3)
 # Website Entry [2 Labels]
 website_label = Label(text="Website:")
 website_entry = Entry(width=42)
+website_entry.focus()
 website_label.grid(row=1, column=0)
 website_entry.grid(row=1, column=1, columnspan=2)
 # Email/Username Entry [2 Labels]
 email_label = Label(text="Email/Username:")
 email_entry = Entry(width=42)
+email_entry.insert(0,"tahalearns@email.com")
 email_label.grid(row=2, column=0)
 email_entry.grid(row=2, column=1, columnspan=2)
 # Password Entry [3 Labels]
