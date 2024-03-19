@@ -14,5 +14,9 @@ canvas = Canvas(width=300, height=300, highlightthickness=0)
 canvas.create_image(150, 150, image=password_image)
 canvas.pack()
 
+# Website Entry [2 Labels]
+# Email/Username Entry [2 Labels]
+# Password Entry [3 Labels]
+# Add Button [1 Label]
 
 window.mainloop()
