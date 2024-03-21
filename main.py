@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
