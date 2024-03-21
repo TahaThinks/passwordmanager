@@ -9,10 +9,13 @@ def save():
     email = email_entry.get()
     password = password_entry.get()
 
-    with open("taha_passwords.txt",'a') as file:
-        file.write(f"{website} | {email} | {password}\n")
-        website_entry.delete(0,END)
-        password_entry.delete(0,END)
+    is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n Email: {email}\n Password: {password}\n Is it ok to Save?")
+
+    if is_ok:
+        with open("taha_passwords.txt",'a') as file:
+            file.write(f"{website} | {email} | {password}\n")
+            website_entry.delete(0,END)
+            password_entry.delete(0,END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
