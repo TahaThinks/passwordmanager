@@ -2,13 +2,14 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
-def get_info():
+def save():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
 
     with open("taha_passwords.txt",'a') as file:
         file.write(f"{website} | {email} | {password}")
+        website_entry.delete(0,END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -40,7 +41,7 @@ password_text.grid(row=3, column=0)
 password_entry.grid(row=3, column=1)
 password_generate_button.grid(row=3, column=2)
 # Add Button [1 Label]
-add_button = Button(text="Add", width=36, command=get_info)
+add_button = Button(text="Add", width=36, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 
 window.mainloop()
