@@ -8,8 +8,9 @@ def save():
     password = password_entry.get()
 
     with open("taha_passwords.txt",'a') as file:
-        file.write(f"{website} | {email} | {password}")
+        file.write(f"{website} | {email} | {password}\n")
         website_entry.delete(0,END)
+        password_entry.delete(0,END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
