@@ -8,14 +8,17 @@ def save():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+    if website == "" or password == "" or email == "":
+        messagebox.showwarning(title="Not Valid", message="One or More Fields are empty!")
 
-    is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n Email: {email}\n Password: {password}\n Is it ok to Save?")
+    else:
+        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n Email: {email}\n Password: {password}\n Is it ok to Save?")
 
-    if is_ok:
-        with open("taha_passwords.txt",'a') as file:
-            file.write(f"{website} | {email} | {password}\n")
-            website_entry.delete(0,END)
-            password_entry.delete(0,END)
+        if is_ok:
+            with open("taha_passwords.txt",'a') as file:
+                file.write(f"{website} | {email} | {password}\n")
+                website_entry.delete(0,END)
+                password_entry.delete(0,END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
