@@ -64,7 +64,10 @@ def save():
                     website_entry.delete(0, END)
                     password_entry.delete(0, END)
 
+# ---------------------------- FIND PASSOWRD ------------------------------- #
+
 # ---------------------------- UI SETUP ------------------------------- #
+
 window = Tk()
 window.title("Password Manager by TahaLearns")
 window.config(padx=50, pady=50)
@@ -76,10 +79,13 @@ canvas.grid(row=0, column=0, columnspan=3)
 
 # Website Entry [2 Labels]
 website_label = Label(text="Website:")
-website_entry = Entry(width=42)
+website_entry = Entry(width=23)
 website_entry.focus()
 website_label.grid(row=1, column=0)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.grid(row=1, column=1)
+# Search Button
+search_button = Button(text="Search", width=15, command=find_password)
+search_button.grid(row=1, column=2)
 # Email/Username Entry [2 Labels]
 email_label = Label(text="Email/Username:")
 email_entry = Entry(width=42)
