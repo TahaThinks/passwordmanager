@@ -61,10 +61,28 @@ def save():
                     json.dump(data, file, indent=4)
 
             finally:
-                    website_entry.delete(0, END)
-                    password_entry.delete(0, END)
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
+
 
 # ---------------------------- FIND PASSOWRD ------------------------------- #
+def find_password():
+    website = website_entry.get()
+    try:
+        with open("taha_passwords.json", "r") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        messagebox.showinfo(titel="Error", message="Not Data File Found")
+    else:
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(
+                title=website,
+                message=f"Email: {email}\nPassword: {password}")
+        else:
+            messagebox.showinfo(title="Error", message=f"No details for {website} exists")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
